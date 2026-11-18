@@ -1,0 +1,70 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172033;
+  background: #f3f6fb;
+}
+.container { width: min(720px, 92%); margin: 42px auto; }
+.header { margin-bottom: 22px; }
+.eyebrow { margin: 0 0 8px; color: #5267c9; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; }
+h1 { margin: 0; font-size: clamp(27px, 5vw, 38px); }
+h2 { margin: 0 0 8px; font-size: 24px; }
+.subtitle, .muted { color: #667085; line-height: 1.5; }
+.panel {
+  margin: 18px 0;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #e4e9f2;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(31, 48, 82, .06);
+}
+form { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+label { margin-top: 5px; font-size: 14px; font-weight: 700; }
+input, select {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #ccd4e0;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+}
+input:focus, select:focus { outline: 2px solid #cbd3ff; border-color: #5267c9; }
+button {
+  margin-top: 10px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: #465cc4;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:hover { background: #3549a8; }
+.secondary { background: #edf0ff; color: #3549a8; }
+.secondary:hover { background: #dfe5ff; }
+.link-button { margin: 0; padding: 0; background: none; color: #465cc4; }
+.link-button:hover { background: none; text-decoration: underline; }
+.switch-text { margin: 20px 0 0; color: #667085; font-size: 14px; }
+.message { min-height: 20px; margin: 12px 0 0; font-size: 14px; }
+.message.success { color: #167344; }
+.message.error { color: #c0392b; }
+.two-columns, .balance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.two-columns > div { display: flex; flex-direction: column; gap: 10px; }
+.dashboard-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.dashboard-heading h2 { margin-bottom: 5px; }
+.balance-card { padding: 20px; border-radius: 12px; background: #f2f4ff; }
+.balance-card p { margin: 0 0 10px; color: #59627a; }
+.balance-card strong { display: block; font-size: 34px; color: #3549a8; }
+.balance-card span { color: #667085; font-size: 13px; }
+.full-width { width: 100%; }
+footer { padding: 20px 0; color: #98a2b3; text-align: center; font-size: 12px; }
+[hidden] { display: none !important; }
+@media (max-width: 520px) {
+  .container { margin: 24px auto; }
+  .panel { padding: 20px; }
+  .two-columns, .balance-grid { grid-template-columns: 1fr; }
+  .dashboard-heading { flex-direction: column; }
+}

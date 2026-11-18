@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div>
+        <p class="eyebrow">STUDENT PORTAL</p>
+        <h1>Leave Management System</h1>
+        <p class="subtitle">Manage your casual and medical leave balance.</p>
+      </div>
+    </header>
+
+    <section id="login-section" class="panel">
+      <h2>Login</h2>
+      <p class="muted">Enter the email address you registered with.</p>
+      <form id="login-form">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="name@example.com" required>
+        <button type="submit">Login</button>
+      </form>
+      <p id="response-message" class="message" aria-live="polite"></p>
+      <p class="switch-text">New user? <button id="show-registration" class="link-button" type="button">Create an account</button></p>
+    </section>
+
+    <section id="registration-section" class="panel" hidden>
+      <h2>Create account</h2>
+      <p class="muted">Fill in your details to register.</p>
+      <form id="registration-form">
+        <label for="username">Name</label>
+        <input id="username" type="text" placeholder="Your name" required>
+
+        <label for="reg-email">Email address</label>
+        <input id="reg-email" type="email" placeholder="name@example.com" required>
+
+        <label for="roll-number">Roll number</label>
+        <input id="roll-number" type="text" placeholder="Your roll number" required>
+
+        <div class="two-columns">
+          <div>
+            <label for="casual-leave">Casual leave days</label>
+            <input id="casual-leave" type="number" min="0" value="10" required>
+          </div>
+          <div>
+            <label for="medical-leave">Medical leave days</label>
+            <input id="medical-leave" type="number" min="0" value="10" required>
+          </div>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <p id="registration-response" class="message" aria-live="polite"></p>
+      <p class="switch-text">Already registered? <button id="show-login" class="link-button" type="button">Back to login</button></p>
+    </section>
+
+    <section id="balance-section" class="panel" hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">YOUR DASHBOARD</p>
+          <h2>Welcome, <span id="username-display"></span></h2>
+          <p class="muted">Roll number: <strong id="roll-number-display"></strong></p>
+        </div>
+        <button id="logout-button" class="secondary" type="button">Logout</button>
+      </div>
+
+      <div class="balance-grid">
+        <article class="balance-card">
+          <p>Casual leave</p>
+          <strong id="casual-leave-display">0</strong>
+          <span>days remaining</span>
+        </article>
+        <article class="balance-card">
+          <p>Medical leave</p>
+          <strong id="medical-leave-display">0</strong>
+          <span>days remaining</span>
+        </article>
+      </div>
+      <button id="refresh-balance" class="secondary full-width" type="button">Refresh balance</button>
+      <p id="response-message" class="message" aria-live="polite"></p>
+    </section>
+
+    <section id="apply-leave-section" class="panel" hidden>
+      <h2>Apply for leave</h2>
+      <form id="leave-form">
+        <label for="leave-type">Leave type</label>
+        <select id="leave-type" required>
+          <option value="casual">Casual leave</option>
+          <option value="medical">Medical leave</option>
+        </select>
+
+        <label for="leave-days">Number of days</label>
+        <input id="leave-days" type="number" min="1" step="1" placeholder="Example: 1" required>
+        <button type="submit">Submit leave application</button>
+      </form>
+    </section>
+
+    <footer>Leave Management System · Learning project</footer>
+  </main>
+</body>
+</html>
